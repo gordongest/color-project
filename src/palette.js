@@ -8,7 +8,9 @@ const Palette = ({ palette }) => {
 
   const [ level, setLevel ] = useState(500);
 
-  const colorBoxes = palette.colors[level].map(color => <ColorBox background={color.hex} name={color.name} />)
+  const colorBoxes = palette.colors[level].map(color => {
+    return <ColorBox background={color.hex} name={color.name} />
+  });
 
   return (
     <div className="palette">
