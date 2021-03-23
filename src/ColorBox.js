@@ -29,6 +29,6 @@ const ColorBox = ({ background, name }) => {
       <span className="more">more</span>
     </div>
   );
-}
+};
 
 export default ColorBox;

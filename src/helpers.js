@@ -35,7 +35,7 @@ const generatePalette = starterPalette => {
         hex: scale[i],
         rgb: chroma(scale[i]).css(),
         rgba: chroma(scale[i]).css().replace("rgb", "rgba").replace(")", ", 1.0")
-      })
+      });
     };
   });
 
