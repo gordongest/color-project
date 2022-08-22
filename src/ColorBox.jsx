@@ -12,7 +12,11 @@ const ColorBox = ({ background, name }) => {
 
     return (
         <div className="ColorBox" style={{ background }}>
-            <div className={`overlay ${isSelected && 'show'}`} style={{ background }}></div>
+            <div className={`copy-overlay ${isSelected && 'show'}`} style={{ background }} />
+            <div className={`copy-message ${isSelected && 'show'}`}>
+                <h1>copied!</h1>
+                <p>{background}</p>
+            </div>
             <div className="copy-container">
                 <div className="box-content">
                     <span>{name}</span>
