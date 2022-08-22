@@ -1,4 +1,5 @@
 import React from 'react';
+import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
 import './ColorBox.css';
 
 const ColorBox = ({ background, name }) =>
@@ -7,7 +8,9 @@ const ColorBox = ({ background, name }) =>
             <div className="box-content">
                 <span>{name}</span>
             </div>
-            <button className="copy-button">copy</button>
+            <CopyToClipboard text={background}>
+                <button className="copy-button" onClick={()=> console.log('clikke')}>copy</button>
+            </CopyToClipboard>
         </div>
         <span className="see-more">more</span>
     </div>

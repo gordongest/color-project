@@ -4,7 +4,6 @@
     margin: 0 auto;
     display: inline-block;
     position: relative;
-    cursor: pointer;
     margin-bottom: -3.5px;
 }
 
@@ -27,6 +26,7 @@
     border: none;
     justify-content: center;
     opacity: 0;
+    cursor: pointer;
 }
 
 .ColorBox:hover .copy-button {
