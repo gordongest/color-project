@@ -1,14 +1,21 @@
 import React from 'react';
+import ColorBox from './ColorBox';
+import { v4 as uuid } from 'uuid';
+import './Palette.css';
 
-const Palette = ({ colors, emoji, id, paletteName }) =>
-    <div className="Palette">
-        <h1>Palette</h1>
-        <div className="Palette-colors">
-            <p>
-                {emoji}
-            </p>
+const Palette = ({ colors, emoji, id, paletteName }) => {
+    const colorBoxes = colors.map(color =>
+        <ColorBox background={color.color} name={color.name} key={uuid()}/>
+    )
+
+    return (
+        <div className="Palette">
+            <div className="Palette-colors">
+                {colorBoxes}
+            </div>
+
         </div>
-
-    </div>
+    )
+}
 
 export default Palette;
