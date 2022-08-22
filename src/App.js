@@ -5,11 +5,9 @@ import generatePalette from './colorHelpers';
 import './App.css';
 
 const App = () => {
-    console.log(generatePalette(seedColors[4]));
-
     return (
         <div>
-            <Palette {...seedColors[4]}/>
+            <Palette colors={generatePalette(seedColors[4]).colors}/>
         </div>
     )
 }

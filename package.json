@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "chroma-js": "^2.4.2",
-    "eslint": "^7.14.0"
+    "eslint": "^7.14.0",
+    "rc-slider": "^10.0.1"
   }
 }
