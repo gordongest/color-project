@@ -11,7 +11,7 @@ const App = () => {
 
     const PaletteComponentWrapper = () => {
         const { id } = useParams();
-        return <Palette palette={generatePalette(findPalette(id))} />;
+        return <Palette {...generatePalette(findPalette(id))} />;
     };
 
     return (
