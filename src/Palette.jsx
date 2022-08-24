@@ -7,6 +7,7 @@ import './Palette.css';
 const Palette = ({ palette }) => {
     const [level, setLevel] = useState(500);
     const [format, setFormat] = useState('hex');
+
     const { colors, paletteName, emoji } = palette;
 
     const colorBoxes = colors[level].map(color =>
