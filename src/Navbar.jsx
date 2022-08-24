@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'rc-slider';
-import { Select, MenuItem } from '@mui/material';
+import { Select, MenuItem, Snackbar, IconButton } from '@mui/material';
+import { Close } from '@mui/icons-material';
+import { v4 as uuid} from 'uuid';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
 const Navbar = ({ level, changeLevel, format, setFormat }) => {
-    const handleChange = e => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleSelect = e => {
         setFormat(e.target.value);
+        setIsOpen(true);
     }
+
+    const handleClose = () => setIsOpen(false);
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setIsOpen(false);
+    //     }, 3000)
+    // }, [isOpen])
 
     return (
         <header className="Navbar">
@@ -27,12 +40,25 @@ const Navbar = ({ level, changeLevel, format, setFormat }) => {
                 </div>
             </div>
             <div className="select-container">
-                <Select value={format} onChange={handleChange}>
+                <Select value={format} onChange={handleSelect}>
                     <MenuItem value="hex">HEX</MenuItem>
                     <MenuItem value="rgb">RGB</MenuItem>
                     <MenuItem value="rgba">RGBA</MenuItem>
                 </Select>
             </div>
+            <Snackbar
+                anchorOrigin={{vertical: "bottom", horizontal: "left"}}
+                open={isOpen}
+                onClose={handleClose}
+                autoHideDuration={2000}
+                message={<span id="message-id">Format changed to {format.toUpperCase()}</span>}
+                ContentProps={{"aria-describedby":"message-id"}}
+                action={[
+                    <IconButton onClick={handleClose} color="inherit" key="close" aria-label="close">
+                        <Close />
+                    </IconButton>
+                ]}
+            />
         </header>
     )
 }
