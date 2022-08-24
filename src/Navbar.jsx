@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Slider from 'rc-slider';
 import { Select, MenuItem, Snackbar, IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
-import { v4 as uuid} from 'uuid';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
@@ -19,7 +19,7 @@ const Navbar = ({ level, changeLevel, format, setFormat }) => {
     return (
         <header className="Navbar">
             <div className="logo">
-                <a href="#">reactcolorpicker</a>
+                <Link to="/">reactcolorpicker</Link>
             </div>
             <div className="slider-container">
                 <span>Level: {level}</span>
