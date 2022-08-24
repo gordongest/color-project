@@ -1,8 +1,10 @@
 import React from 'react';
+import { v4 as uuid } from 'uuid';
 import { withStyles } from '@mui/styles';
 
 const styles = {
     root: {
+        height: "180px",
         backgroundColor: "white",
         border: "1px solid black",
         borderRadius: "5px",
@@ -14,7 +16,11 @@ const styles = {
         }
     },
     colors: {
-        backgroundColor: "white"
+        backgroundColor: "#dae1e4",
+        height: "80%",
+        width: "100%",
+        borderRadius:"5px",
+        overflow: "hidden"
     },
     title: {
         display: "flex",
@@ -22,23 +28,37 @@ const styles = {
         alignItems: "center",
         margin: "0",
         color: "black",
-        paddingTop: "1rem",
+        paddingTop: "0.5rem",
         position: "relative",
     },
     emoji: {
         marginLeft: "0.5rem",
         fontSize: "1.5rem"
+    },
+    miniColor: {
+        height: "25%",
+        width: "20%",
+        display: "inline-block",
+        margin: "0 auto",
+        position: "relative",
+        marginBottom: "-3.5px"
     }
 }
 
-const MiniPalette = ({ paletteName, emoji, classes }) =>
+const MiniPalette = ({ colors, paletteName, emoji, classes }) =>
     <div className={classes.root}>
         <div className={classes.colors}>
-            <h5 className={classes.title}>
-                {paletteName}
-                <span className={classes.emoji}>{emoji}</span>
-            </h5>
+            {colors.map(color =>
+                <div
+                    className={classes.miniColor}
+                    style={{ backgroundColor: color.color }}
+                    key={uuid()}
+                />
+            )}
         </div>
+        <h5 className={classes.title}>
+            {paletteName} <span className={classes.emoji}>{emoji}</span>
+        </h5>
    </div>
 
 export default withStyles(styles)(MiniPalette);
