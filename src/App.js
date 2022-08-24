@@ -7,7 +7,7 @@ import './App.css';
 const App = () => {
     return (
         <div>
-            <Palette colors={generatePalette(seedColors[4]).colors}/>
+            <Palette palette={generatePalette(seedColors[4])}/>
         </div>
     )
 }

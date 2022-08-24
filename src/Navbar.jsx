@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Slider from 'rc-slider';
 import { Select, MenuItem, Snackbar, IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
@@ -15,12 +15,6 @@ const Navbar = ({ level, changeLevel, format, setFormat }) => {
     }
 
     const handleClose = () => setIsOpen(false);
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setIsOpen(false);
-    //     }, 3000)
-    // }, [isOpen])
 
     return (
         <header className="Navbar">
