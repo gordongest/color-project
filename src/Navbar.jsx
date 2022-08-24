@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Slider from 'rc-slider';
 import { Select, MenuItem } from '@mui/material';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
-const Navbar = ({ level, changeLevel, changeFormat }) => {
-    const [format, setFormat] = useState('hex');
+const Navbar = ({ level, changeLevel, format, setFormat }) => {
+    const handleChange = e => {
+        setFormat(e.target.value);
+    }
 
     return (
         <header className="Navbar">
@@ -25,10 +27,10 @@ const Navbar = ({ level, changeLevel, changeFormat }) => {
                 </div>
             </div>
             <div className="select-container">
-                <Select value={format} onChange={setFormat}>
+                <Select value={format} onChange={handleChange}>
                     <MenuItem value="hex">HEX</MenuItem>
                     <MenuItem value="rgb">RGB</MenuItem>
-                    <MenuItem value="rgb">RGBA</MenuItem>
+                    <MenuItem value="rgba">RGBA</MenuItem>
                 </Select>
             </div>
         </header>
