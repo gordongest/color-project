@@ -14,6 +14,11 @@ const App = () => {
         return <Palette {...generatePalette(findPalette(id))} />;
     };
 
+    const WrappedColorRange = () => {
+        const { paletteId, colorId } = useParams();
+        return <h1>{paletteId} {colorId}</h1>;
+    }
+
     return (
         <Routes>
             <Route exact path="/" element={<PaletteList palettes={seedColors}/>}/>
@@ -21,6 +26,7 @@ const App = () => {
                 exact path="palette/:id"
                 element={<WrappedPalette />}
             />
+            <Route path="palette/:paletteId/:colorId" element={<WrappedColorRange />}/>
         </Routes>
     )
 }
