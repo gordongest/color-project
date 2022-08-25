@@ -3,7 +3,7 @@ import { Route, Routes, useParams } from 'react-router-dom';
 import PaletteList from "./PaletteList";
 import Palette from './Palette';
 import SingleColorPalette from "./SingleColorPalette";
-import generatePalette from "./colorHelpers";
+import { generatePalette, generateSingleColorPalette } from "./colorHelpers";
 import seedColors from "./seedColors";
 import './App.css';
 
@@ -16,8 +16,11 @@ const App = () => {
     };
 
     const WrappedSingleColorPalette = () => {
-        const params = useParams();
-        return <SingleColorPalette {...params} />;
+        const { paletteId, colorId } = useParams();;
+        const { colors } = generatePalette(findPalette(paletteId));
+        const shades = generateSingleColorPalette(colors, colorId);
+
+        return <SingleColorPalette shades={shades} />;
     }
 
     return (

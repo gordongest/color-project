@@ -48,4 +48,13 @@ const generatePalette = ({ paletteName, id, emoji, colors }) => {
     return newPalette;
 }
 
-export default generatePalette;
+const generateSingleColorPalette = (colors, colorId) =>
+    Object.values(colors).reduce((palette, levels) => {
+        palette = palette.concat(levels.filter(color =>
+            color.id === colorId
+        ));
+
+        return palette;
+    }, []).slice(1);
+
+export { generatePalette, generateSingleColorPalette };
