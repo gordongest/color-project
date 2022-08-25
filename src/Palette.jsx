@@ -4,12 +4,17 @@ import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import './Palette.css';
 
-const Palette = ({ colors, paletteName, emoji }) => {
+const Palette = ({ colors, id, paletteName, emoji }) => {
     const [level, setLevel] = useState(500);
     const [format, setFormat] = useState('hex');
 
     const colorBoxes = colors[level].map(color =>
-        <ColorBox background={color[format]} name={color.name} key={uuid()}/>
+        <ColorBox
+            background={color[format]}
+            name={color.name}
+            seeMoreUrl={`/palette/${id}/${color.id}`}
+            key={uuid()}
+        />
     )
 
     return (

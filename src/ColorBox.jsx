@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
 import './ColorBox.css';
 
-const ColorBox = ({ background, name }) => {
+const ColorBox = ({ background, name, seeMoreUrl }) => {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleCopy = () => {
@@ -11,8 +11,8 @@ const ColorBox = ({ background, name }) => {
         setTimeout(() => setIsSelected(false), 1500);
     }
 
-    const handleSeeMoreClick = e => {
-        e.stopPropagation()
+    const handleClick = e => {
+        e.stopPropagation();
     }
 
     return (
@@ -30,7 +30,7 @@ const ColorBox = ({ background, name }) => {
                     <button className="copy-button">copy</button>
                 </CopyToClipboard>
             </div>
-            <Link to="/" onClick={handleSeeMoreClick}>
+            <Link to={seeMoreUrl} onClick={handleClick}>
                 <span className="see-more">more</span>
             </Link>
         </div>
