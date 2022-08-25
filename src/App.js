@@ -9,7 +9,7 @@ import './App.css';
 const App = () => {
     const findPalette = id => seedColors.find(palette => palette.id === id);
 
-    const PaletteComponentWrapper = () => {
+    const WrappedPalette = () => {
         const { id } = useParams();
         return <Palette {...generatePalette(findPalette(id))} />;
     };
@@ -19,7 +19,7 @@ const App = () => {
             <Route exact path="/" element={<PaletteList palettes={seedColors}/>}/>
             <Route
                 exact path="palette/:id"
-                element={<PaletteComponentWrapper />}
+                element={<WrappedPalette />}
             />
         </Routes>
     )

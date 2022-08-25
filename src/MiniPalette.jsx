@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 import { withStyles } from '@mui/styles';
 
 const styles = {
@@ -45,20 +46,32 @@ const styles = {
     }
 }
 
-const MiniPalette = ({ colors, paletteName, emoji, classes }) =>
-    <div className={classes.root}>
-        <div className={classes.colors}>
-            {colors.map(color =>
-                <div
-                    className={classes.miniColor}
-                    style={{ backgroundColor: color.color }}
-                    key={uuid()}
-                />
-            )}
+const MiniPalette = ({ colors, id, paletteName, emoji, classes }) => {
+    const history = useNavigate();
+
+    const handleClick = e => {
+        e.preventDefault();
+        history(`/palette/${id}`);
+    }
+
+    const colorMap = colors.map(color =>
+        <div
+            className={classes.miniColor}
+            style={{ backgroundColor: color.color }}
+            key={uuid()}
+        />
+    );
+
+    return (
+        <div className={classes.root} onClick={handleClick}>
+            <div className={classes.colors}>
+                {colorMap}
+            </div>
+            <h5 className={classes.title}>
+                {paletteName} <span className={classes.emoji}>{emoji}</span>
+            </h5>
         </div>
-        <h5 className={classes.title}>
-            {paletteName} <span className={classes.emoji}>{emoji}</span>
-        </h5>
-   </div>
+    )
+}
 
 export default withStyles(styles)(MiniPalette);
