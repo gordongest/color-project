@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
-import { v4 as uuid } from 'uuid';
 import './Palette.css';
 
 const Palette = ({ colors, paletteName, emoji }) => {

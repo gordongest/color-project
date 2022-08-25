@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Slider from 'rc-slider';
 import { Select, MenuItem, Snackbar, IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
+import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import MiniPalette from "./MiniPalette";
 import { withStyles } from '@mui/styles';
 import { v4 as uuid } from 'uuid';
+import MiniPalette from "./MiniPalette";
 
 const styles = {
     root: {
