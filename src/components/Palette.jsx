@@ -3,7 +3,7 @@ import { v4 as uuid } from 'uuid';
 import ColorBox from './ColorBox';
 import Navbar from './Navbar';
 import PaletteFooter from './PaletteFooter';
-import './Palette.css';
+import '../styles/Palette.css';
 
 const Palette = ({ colors, id, paletteName, emoji }) => {
     const [level, setLevel] = useState(500);

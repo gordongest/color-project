@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
-import './ColorBox.css';
+import '../styles/ColorBox.css';
 
 const ColorBox = ({ background, name, showLink, seeMoreUrl }) => {
     const [isSelected, setIsSelected] = useState(false);

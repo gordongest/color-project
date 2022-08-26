@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
-import PaletteList from "./PaletteList";
-import Palette from './Palette';
-import SingleColorPalette from "./SingleColorPalette";
-import { generatePalette, generateSingleColorPalette } from "./colorHelpers";
-import seedColors from "./seedColors";
-import './App.css';
+import PaletteList from "./components/PaletteList";
+import Palette from './components/Palette';
+import SingleColorPalette from "./components/SingleColorPalette";
+import { generatePalette, generateSingleColorPalette } from "./helpers/colorHelpers";
+import seedColors from "./helpers/seedColors";
+import './styles/App.css';
 
 const App = () => {
     const findPalette = id => seedColors.find(palette => palette.id === id);
@@ -20,7 +20,7 @@ const App = () => {
         const { colors, paletteName, emoji } = generatePalette(findPalette(paletteId));
         const shades = generateSingleColorPalette(colors, colorId);
 
-        return <SingleColorPalette shades={shades} paletteName={paletteName} emoji={emoji} />;
+        return <SingleColorPalette shades={shades} paletteId={paletteId} paletteName={paletteName} emoji={emoji} />;
     }
 
     return (

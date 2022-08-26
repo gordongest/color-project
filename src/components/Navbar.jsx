@@ -4,7 +4,7 @@ import { Select, MenuItem, Snackbar, IconButton } from '@mui/material';
 import { Close } from '@mui/icons-material';
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import './Navbar.css';
+import '../styles/Navbar.css';
 
 const Navbar = ({ level, changeLevel, format, setFormat, allColors }) => {
     const [isOpen, setIsOpen] = useState(false);

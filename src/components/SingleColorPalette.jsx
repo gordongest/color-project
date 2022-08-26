@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from "@mui/styles";
 import { v4 as uuid } from 'uuid';
 import ColorBox from "./ColorBox";
@@ -17,7 +18,7 @@ const styles= {
     }
 }
 
-const SingleColorPalette = ({ shades, paletteName, emoji, classes }) => {
+const SingleColorPalette = ({ shades, paletteId, paletteName, emoji, classes }) => {
     const [format, setFormat] = useState('hex');
 
     const shadeMap = shades.map(shade =>
@@ -30,13 +31,18 @@ const SingleColorPalette = ({ shades, paletteName, emoji, classes }) => {
         )
 
     return (
-        <div className="Palette">
+        <div className="SingleColorPalette Palette">
             <Navbar
                 format={format}
                 setFormat={setFormat}
             />
             <div className="Palette-colors">
                 {shadeMap}
+                <div className="go-back ColorBox">
+                    <Link to={`/palette/${paletteId}`} className="back-button">
+                        <span>go back</span>
+                    </Link>
+                </div>
             </div>
             <PaletteFooter paletteName={paletteName} emoji={emoji} />
         </div>
