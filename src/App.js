@@ -16,11 +16,11 @@ const App = () => {
     };
 
     const WrappedSingleColorPalette = () => {
-        const { paletteId, colorId } = useParams();;
-        const { colors } = generatePalette(findPalette(paletteId));
+        const { paletteId, colorId } = useParams();
+        const { colors, paletteName, emoji } = generatePalette(findPalette(paletteId));
         const shades = generateSingleColorPalette(colors, colorId);
 
-        return <SingleColorPalette shades={shades} />;
+        return <SingleColorPalette shades={shades} paletteName={paletteName} emoji={emoji} />;
     }
 
     return (

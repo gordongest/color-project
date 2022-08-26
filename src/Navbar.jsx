@@ -6,7 +6,7 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import './Navbar.css';
 
-const Navbar = ({ level, changeLevel, format, setFormat }) => {
+const Navbar = ({ level, changeLevel, format, setFormat, allColors }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleSelect = e => {
@@ -21,18 +21,20 @@ const Navbar = ({ level, changeLevel, format, setFormat }) => {
             <div className="logo">
                 <Link to="/">reactcolorpicker</Link>
             </div>
-            <div className="slider-container">
-                <span>Level: {level}</span>
-                <div className="slider">
-                    <Slider
-                        defaultValue={level}
-                        step={100}
-                        min={100}
-                        max={900}
-                        onAfterChange={changeLevel}
-                    />
+            {allColors &&
+                <div className="slider-container">
+                    <span>Level: {level}</span>
+                    <div className="slider">
+                        <Slider
+                            defaultValue={level}
+                            step={100}
+                            min={100}
+                            max={900}
+                            onAfterChange={changeLevel}
+                        />
+                    </div>
                 </div>
-            </div>
+            }
             <div className="select-container">
                 <Select value={format} onChange={handleSelect}>
                     <MenuItem value="hex">HEX</MenuItem>
