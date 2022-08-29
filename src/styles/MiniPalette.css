@@ -1,0 +1,44 @@
+.mini-color-root {
+    height: 180px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.mini-color-root:hover {
+    cursor: pointer;
+}
+
+.mini-color-colors {
+    background-color: #dae1e4;
+    height: 80%;
+    width: 100%;
+    border-radius:5px;
+    overflow: hidden;
+}
+
+.mini-color-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    color: black;
+    padding-top: 0.5rem;
+    position: relative;
+}
+
+.mini-color-emoji {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.mini-color {
+    height: 25%;
+    width: 20%;
+    display: inline-block;
+    margin: 0 auto -3.5px auto;
+    position: relative;
+}

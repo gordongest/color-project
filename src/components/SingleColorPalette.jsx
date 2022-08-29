@@ -1,24 +1,12 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from "@mui/styles";
 import { v4 as uuid } from 'uuid';
 import ColorBox from "./ColorBox";
 import Navbar from "./Navbar";
 import PaletteFooter from './PaletteFooter';
+import '../styles/SingleColorPalette.css';
 
-const styles= {
-    root: {
-        display: "flex",
-        height: "100vh",
-        width: "100%"
-    },
-    colorBox: {
-        height: "100%",
-        width: "20%"
-    }
-}
-
-const SingleColorPalette = ({ shades, paletteId, paletteName, emoji, classes }) => {
+const SingleColorPalette = ({ shades, paletteId, paletteName, emoji }) => {
     const [format, setFormat] = useState('hex');
 
     const shadeMap = shades.map(shade =>
@@ -49,4 +37,4 @@ const SingleColorPalette = ({ shades, paletteId, paletteName, emoji, classes }) 
     )
 }
 
-export default withStyles(styles)(SingleColorPalette);
+export default SingleColorPalette;
