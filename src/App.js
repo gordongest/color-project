@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route, Routes, useParams } from 'react-router-dom';
-import PaletteList from "./components/PaletteList";
+import PaletteList from './components/PaletteList';
 import Palette from './components/Palette';
-import SingleColorPalette from "./components/SingleColorPalette";
-import { generatePalette, generateSingleColorPalette } from "./helpers/colorHelpers";
-import seedColors from "./helpers/seedColors";
+import SingleColorPalette from './components/SingleColorPalette';
+import NewPaletteForm from './components/NewPaletteForm';
+import { generatePalette, generateSingleColorPalette } from './helpers/colorHelpers';
+import seedColors from './helpers/seedColors';
 import './styles/App.css';
 
 const App = () => {
@@ -25,15 +26,24 @@ const App = () => {
 
     return (
         <Routes>
-            <Route exact path="/"
-                   element={<PaletteList palettes={seedColors}/>}
+            <Route
+                exact
+                path="/"
+                element={<PaletteList palettes={seedColors}/>}
             />
             <Route
-                exact path="/palette/:id"
+                exact
+                path="/palette/new"
+                element={<NewPaletteForm />}
+            />
+            <Route
+                exact
+                path="/palette/:id"
                 element={<WrappedPalette />}
             />
             <Route
-                exact path="/palette/:paletteId/:colorId"
+                exact
+                path="/palette/:paletteId/:colorId"
                 element={<WrappedSingleColorPalette />}
             />
         </Routes>

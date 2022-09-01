@@ -1,16 +1,28 @@
 .ColorBox {
     width: 20%;
     height: 25%;
-    margin: 0 auto;
+    margin: 0 auto -3.5px auto;
     display: inline-block;
     position: relative;
-    margin-bottom: -3.5px;
 }
+
+/*@media (max-width: 900px) {*/
+/*    .ColorBox {*/
+/*        width: 50%;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 600px) {*/
+/*    .ColorBox {*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
 
 .ColorBox.go-back {
     color: white;
     background-color: #b5bbbf;
 }
+
 
 .SingleColorPalette .ColorBox {
     height: 50%;
