@@ -1,30 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from "@mui/styles";
 import { CopyToClipboard } from "react-copy-to-clipboard/lib/Component";
 import chroma from 'chroma-js';
-import sizeHelpers from '../helpers/sizeHelpers';
-import sizes from '../helpers/sizes';
 import '../styles/ColorBox.css';
 
-let styles = {
-    ColorBox: {
-        [sizeHelpers.down(sizes.lg)]: {
-            width: "25%",
-            height: props => (props.showLink && "20%")
-        },
-        [sizeHelpers.down(sizes.md)]: {
-            width: "50%",
-            height: props => (props.showLink && "10%")
-        },
-        [sizeHelpers.down(sizes.xs)]: {
-            width: "100%",
-            height: props => (props.showLink && "5%")
-        }
-    }
-};
-
-const ColorBox = ({ background, name, classes, showLink, seeMoreUrl }) => {
+const ColorBox = ({ background, name, classes, fullPalette, seeMoreUrl }) => {
     const [isSelected, setIsSelected] = useState(false);
     const isLight = chroma(background).luminance() >= .675;
     const isDark = chroma(background).luminance() <= .08;
@@ -53,7 +33,7 @@ const ColorBox = ({ background, name, classes, showLink, seeMoreUrl }) => {
                     <button className={`copy-button ${isLight && "dark-text"}`}>copy</button>
                 </CopyToClipboard>
             </div>
-            {showLink &&
+            {fullPalette &&
                 <Link to={seeMoreUrl} onClick={handleClick}>
                     <span className={`see-more ${isLight && "dark-text"}`}>more</span>
                 </Link>
@@ -62,4 +42,4 @@ const ColorBox = ({ background, name, classes, showLink, seeMoreUrl }) => {
     )
 }
 
-export default withStyles(styles)(ColorBox);
+export default ColorBox;

@@ -6,26 +6,9 @@
     position: relative;
 }
 
-/*@media (max-width: 900px) {*/
-/*    .ColorBox {*/
-/*        width: 50%;*/
-/*    }*/
-/*}*/
-
-/*@media (max-width: 600px) {*/
-/*    .ColorBox {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
 .ColorBox.go-back {
     color: white;
     background-color: #b5bbbf;
-}
-
-
-.SingleColorPalette .ColorBox {
-    height: 50%;
 }
 
 .copy-button, .back-button {

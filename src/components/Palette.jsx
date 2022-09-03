@@ -13,7 +13,7 @@ const Palette = ({ colors, id, paletteName, emoji }) => {
         <ColorBox
             background={color[format]}
             name={color.name}
-            showLink
+            fullPalette
             seeMoreUrl={`/palette/${id}/${color.id}`}
             key={uuid()}
         />

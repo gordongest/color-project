@@ -8,3 +8,31 @@
     height: 100%;
     width: 20%;
 }
+
+/*
+    xs: "575.98px",
+    sm: "767.98px",
+    md: "991.98px",
+    lg: "1199.98px"
+*/
+
+@media (max-width: 1199.98px) {
+    .SingleColorPalette .ColorBox {
+        width: 25%;
+        height: 33.333%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .SingleColorPalette .ColorBox {
+        width: 50%;
+        height: 20%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .SingleColorPalette .ColorBox {
+        width: 100%;
+        height: 10%;
+    }
+}

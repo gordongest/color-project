@@ -13,7 +13,7 @@ const SingleColorPalette = ({ shades, paletteId, paletteName, emoji }) => {
             <ColorBox
                 name={shade.name}
                 background={shade[format]}
-                showLink={false}
+                fullPalette={false}
                 key={uuid()}
             />
         )
