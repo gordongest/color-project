@@ -19,7 +19,7 @@ const ColorBox = ({ background, name, classes, fullPalette, seeMoreUrl }) => {
     }
 
     return (
-        <div className={`ColorBox ${classes.ColorBox}`} style={{ background }}>
+        <div className="ColorBox" style={{ background }}>
             <div className={`copy-overlay ${isSelected && "show"}`} style={{ background }} />
             <div className={`copy-message ${isSelected && "show"}`}>
                 <h1>copied!</h1>

@@ -9,13 +9,6 @@
     width: 20%;
 }
 
-/*
-    xs: "575.98px",
-    sm: "767.98px",
-    md: "991.98px",
-    lg: "1199.98px"
-*/
-
 @media (max-width: 1199.98px) {
     .SingleColorPalette .ColorBox {
         width: 25%;
